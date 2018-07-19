@@ -104,8 +104,9 @@ public class MainActivity extends Activity implements LoginView {
 
     @Override
     protected void onDestroy() {
+        Log.e("", "onDestroy");
         EventBus.getDefault().unregister(this);
-//        unregisterReceiver(myReceiver);
+        unregisterReceiver(myReceiver);
         super.onDestroy();
     }
 }
