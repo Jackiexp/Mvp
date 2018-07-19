@@ -91,6 +91,7 @@ public class MainActivity extends Activity implements LoginView {
 
     @Subscribe(threadMode = ThreadMode.POSTING, priority = 1)
     public void onMessageEvent(MessageEvent event) {
+        Log.e("", "onMessageEvent");
         switch (event.getCode()) {
             case CODE_TEST_ZEEO:
                 Log.e("", "MainActivity = " + event.getMessage() + ", CODE = " + event.getCode());
