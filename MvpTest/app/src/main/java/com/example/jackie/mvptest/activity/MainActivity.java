@@ -57,7 +57,7 @@ public class MainActivity extends Activity implements LoginView {
 
         EventBus.getDefault().register(this);
         initReceiver();
-        Utils.startServie(this);
+//        Utils.startServie(this);
     }
 
     public void initReceiver() {
@@ -70,6 +70,7 @@ public class MainActivity extends Activity implements LoginView {
     @OnClick(R.id.bt_commit)
     public void login() {
 
+        DaggerActivity.start(this);
         Utils.startServie(this);
 //        Utils.setAlarmCycle(this);
 //        Utils.openDing(this);
