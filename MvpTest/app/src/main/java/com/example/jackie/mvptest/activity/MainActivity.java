@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jackie.mvptest.R;
+import com.example.jackie.mvptest.app.AppBaseApplication;
 import com.example.jackie.mvptest.entity.MessageEvent;
 import com.example.jackie.mvptest.presenter.LoginPresenter;
 import com.example.jackie.mvptest.presenter.LoginPresenterCompl;
@@ -57,7 +58,7 @@ public class MainActivity extends Activity implements LoginView {
 
         EventBus.getDefault().register(this);
         initReceiver();
-//        Utils.startServie(this);
+        Utils.startServie(AppBaseApplication.getInstance());
     }
 
     public void initReceiver() {
@@ -67,22 +68,29 @@ public class MainActivity extends Activity implements LoginView {
         registerReceiver(myReceiver, intentFilter);
     }
 
-    @OnClick(R.id.bt_commit)
-    public void login() {
-
-        DaggerActivity.start(this);
-        Utils.startServie(this);
-//        Utils.setAlarmCycle(this);
-//        Utils.openDing(this);
-//        VideoTest.startActivity(this);
-//        EventBusTest1.startActivity(this);
-//        loginPresenter.login(editUsername.getText().toString(), editPassword.getText().toString());
+    @OnClick(R.id.bt_service)
+    public void startService(){
+        Utils.startServie(AppBaseApplication.getInstance());
     }
 
-//    @Override
-//    public void setPresenter(Object presenter) {
-//
-//    }
+    @OnClick(R.id.bt_dagger)
+    public void startDagger(){
+        DaggerActivity.start(this);
+    }
+
+    @OnClick(R.id.bt_video)
+    public void startVideo(){
+        VideoTest.startActivity(this);
+    }
+    @OnClick(R.id.bt_event)
+    public void startEvent(){
+        EventBusTest1.startActivity(this);
+    }
+
+    @OnClick(R.id.bt_commit)
+    public void login() {
+        loginPresenter.login(editUsername.getText().toString(), editPassword.getText().toString());
+    }
 
     @Override
     public void onLoginResult(String message) {
