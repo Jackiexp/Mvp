@@ -3,10 +3,9 @@ package com.example.jackie.mvptest.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Handler;
 import android.util.Log;
 
-import com.example.jackie.mvptest.util.Utils;
+import com.example.jackie.mvptest.app.util.Utils;
 
 /**
  * Created by Administrator on 2017/2/22.

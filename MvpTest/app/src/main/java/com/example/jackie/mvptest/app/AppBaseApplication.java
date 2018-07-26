@@ -7,7 +7,7 @@ import com.example.jackie.mvptest.app.component.DaggerAppComponent;
 import com.example.jackie.mvptest.app.module.AppModule;
 
 /**
- * Created by javalong on 16-12-27.
+ * Created by Jackie on 2018/7.
  */
 
 public class AppBaseApplication extends Application {

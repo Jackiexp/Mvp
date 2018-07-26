@@ -11,7 +11,7 @@ import android.os.SystemClock;
 import android.support.annotation.Nullable;
 
 import com.example.jackie.mvptest.receiver.AlarmReceiver;
-import com.example.jackie.mvptest.util.Utils;
+import com.example.jackie.mvptest.app.util.Utils;
 
 /**
  * Created by zejian

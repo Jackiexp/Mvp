@@ -6,7 +6,7 @@ import com.example.jackie.mvptest.app.view.MvpView;
 import javax.inject.Inject;
 
 /**
- * Created by javalong on 16-12-27.
+ * Created by Jackie on 2018/7.
  * presenter基类
  */
 public abstract class AppPresenter<V extends MvpView>{

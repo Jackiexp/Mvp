@@ -1,8 +1,7 @@
-package com.example.jackie.mvptest.net;
+package com.example.jackie.mvptest.app.net;
 
 import com.example.jackie.mvptest.entity.Meta;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 

@@ -1,4 +1,4 @@
-package com.example.jackie.mvptest.util;
+package com.example.jackie.mvptest.app.util;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 import com.example.jackie.mvptest.service.SimpleService;
 
@@ -28,7 +27,7 @@ public class Utils {
         if (launchIntentForPackage != null) {
             mContext.startActivity(launchIntentForPackage);
         } else {
-            Toast.makeText(mContext, "手机未安装该应用", Toast.LENGTH_SHORT).show();
+            UserUtils.showToast("手机未安装该应用");
         }
     }
 
@@ -40,7 +39,7 @@ public class Utils {
         if (launchIntentForPackage != null) {
             mContext.startActivity(launchIntentForPackage);
         } else {
-            Toast.makeText(mContext, "手机未安装该应用", Toast.LENGTH_SHORT).show();
+            UserUtils.showToast("手机未安装该应用");
         }
     }
 

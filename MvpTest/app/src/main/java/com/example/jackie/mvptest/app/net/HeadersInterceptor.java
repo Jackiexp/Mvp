@@ -1,4 +1,4 @@
-package com.example.jackie.mvptest.net;
+package com.example.jackie.mvptest.app.net;
 
 import android.support.annotation.NonNull;
 

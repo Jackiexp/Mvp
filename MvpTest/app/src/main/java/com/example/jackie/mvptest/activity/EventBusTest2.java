@@ -5,14 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.jackie.mvptest.R;
+import com.example.jackie.mvptest.app.util.UserUtils;
 import com.example.jackie.mvptest.entity.MessageEvent;
-import com.example.jackie.mvptest.presenter.LoginPresenter;
-import com.example.jackie.mvptest.presenter.LoginPresenterCompl;
 import com.example.jackie.mvptest.views.LoginView;
 
 import org.greenrobot.eventbus.EventBus;
@@ -65,7 +62,7 @@ public class EventBusTest2 extends Activity implements LoginView {
     @Override
     public void onLoginResult(String message) {
         textTip.setText(message);
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        UserUtils.showToast(message);
     }
 
 }

@@ -4,15 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.widget.Toast;
+import android.widget.EditText;
 
 import com.example.jackie.mvptest.R;
 import com.example.jackie.mvptest.app.AppBaseActivity;
+import com.example.jackie.mvptest.app.util.UserUtils;
 import com.example.jackie.mvptest.component.DaggerMainActivityComponent;
 import com.example.jackie.mvptest.module.MainActivityModule;
 import com.example.jackie.mvptest.presenter.DaggerPresenter;
 import com.example.jackie.mvptest.views.LoginView;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -22,20 +24,22 @@ import butterknife.OnClick;
 
 public class DaggerActivity extends AppBaseActivity<DaggerPresenter> implements LoginView {
 
-//    @BindView(R.id.bt_commit)
-//    Button btCommit;
+    @BindView(R.id.edit_username)
+    EditText editUsername;
+    @BindView(R.id.edit_password)
+    EditText editPassword;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dagger);
         ButterKnife.bind(this);
-
     }
 
     @OnClick(R.id.bt_commit)
     public void btCommit() {
-        mPresenter.login("", "");
+        UserUtils.closeKeyboard(this);
+        mPresenter.login(editUsername.getText().toString(), editPassword.getText().toString());
     }
 
     @Override
@@ -49,7 +53,7 @@ public class DaggerActivity extends AppBaseActivity<DaggerPresenter> implements 
 
     @Override
     public void onLoginResult(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        UserUtils.showToast(message);
     }
 
     public static void start(Context context) {

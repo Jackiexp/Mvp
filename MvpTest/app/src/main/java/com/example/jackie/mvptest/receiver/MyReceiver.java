@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.example.jackie.mvptest.util.Utils;
+import com.example.jackie.mvptest.app.util.Utils;
 
 public class MyReceiver extends BroadcastReceiver {
     @Override

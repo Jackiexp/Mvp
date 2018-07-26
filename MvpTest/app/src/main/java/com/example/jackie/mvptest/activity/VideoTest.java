@@ -13,10 +13,10 @@ import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.jackie.mvptest.R;
-import com.example.jackie.mvptest.config.Constants;
+import com.example.jackie.mvptest.app.config.Constants;
+import com.example.jackie.mvptest.app.util.UserUtils;
 import com.example.jackie.mvptest.presenter.IRoomView;
 import com.example.jackie.mvptest.presenter.RoomHelper;
 import com.example.jackie.mvptest.presenter.VideoPresenter;
@@ -152,17 +152,17 @@ public class VideoTest extends Activity implements VideoView, IRoomView {
 
     @Override
     public void onLoginSDKSuccess() {
-        Toast.makeText(this, "登录成功", Toast.LENGTH_LONG).show();
+        UserUtils.showToast("登录成功");
     }
 
     @Override
     public void onLoginSDKFailed(String module, int errCode, String errMsg) {
-        Toast.makeText(this, "登录失败", Toast.LENGTH_LONG).show();
+        UserUtils.showToast("登录失败");
     }
 
     @Override
     public void onEnterRoom() {
-        Toast.makeText(VideoTest.this, "加入成功 onEnterRoom", Toast.LENGTH_LONG).show();
+        UserUtils.showToast("加入成功 onEnterRoom");
         Log.e("VideoTest", "onEnterRoom");
     }
 
@@ -199,7 +199,7 @@ public class VideoTest extends Activity implements VideoView, IRoomView {
         return ILiveRoomManager.getInstance().joinRoom(roomId, option, new ILiveCallBack() {
             @Override
             public void onSuccess(Object data) {
-                Toast.makeText(VideoTest.this, "加入成功", Toast.LENGTH_LONG).show();
+                UserUtils.showToast("加入成功");
                 Log.e("VideoTest", "onSuccess");
 //                onEnterRoom();
 //                avRootView.onEnterRoom();
@@ -262,11 +262,11 @@ public class VideoTest extends Activity implements VideoView, IRoomView {
                         }
                     }
                     if (!"".equals(needPermission)) {
-                        Toast.makeText(VideoTest.this, "需要权限:" + needPermission, Toast.LENGTH_SHORT).show();
+                        UserUtils.showToast("需要权限:");
                     }
 
                 } else {
-                    Toast.makeText(VideoTest.this, "没有获取权限", Toast.LENGTH_SHORT).show();
+                    UserUtils.showToast("没有获取权限");
                 }
                 break;
         }

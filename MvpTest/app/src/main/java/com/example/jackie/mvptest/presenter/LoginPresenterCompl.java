@@ -6,7 +6,7 @@ import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.example.jackie.mvptest.entity.Meta;
 import com.example.jackie.mvptest.entity.User;
-import com.example.jackie.mvptest.net.RetrofitHelper;
+import com.example.jackie.mvptest.app.net.RetrofitHelper;
 import com.example.jackie.mvptest.views.LoginView;
 
 import java.util.HashMap;
