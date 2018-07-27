@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.jackie.mvptest.R;
 import com.example.jackie.mvptest.app.AppBaseApplication;
 import com.example.jackie.mvptest.app.util.UserUtils;
+import com.example.jackie.mvptest.app.webview.WebActivity;
 import com.example.jackie.mvptest.entity.MessageEvent;
 import com.example.jackie.mvptest.presenter.LoginPresenter;
 import com.example.jackie.mvptest.presenter.LoginPresenterCompl;
@@ -79,9 +80,15 @@ public class MainActivity extends Activity implements LoginView {
     public void startVideo(){
         VideoTest.startActivity(this);
     }
+
     @OnClick(R.id.bt_event)
     public void startEvent(){
         EventBusTest1.startActivity(this);
+    }
+
+    @OnClick(R.id.bt_webview)
+    public void startWebview(){
+        WebActivity.startActivity(this);
     }
 
     @OnClick(R.id.bt_commit)
