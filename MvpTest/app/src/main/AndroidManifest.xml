@@ -75,12 +75,6 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />//此处必需指定action，否则监听不到
             </intent-filter>
         </receiver>
-        <receiver android:name=".receiver.RingReceived">
-            <intent-filter>
-                <!--<action android:name="ConnectivityManager.CONNECTIVITY_ACTION"/>//这样写是不对的-->
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />//此处必需指定action，否则监听不到
-            </intent-filter>
-        </receiver>
 
         <receiver
             android:name="com.example.jackie.mvptest.receiver.MyReceiver"

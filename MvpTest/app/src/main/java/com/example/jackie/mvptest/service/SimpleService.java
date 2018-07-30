@@ -13,6 +13,8 @@ import android.support.annotation.Nullable;
 import com.example.jackie.mvptest.receiver.AlarmReceiver;
 import com.example.jackie.mvptest.app.util.Utils;
 
+import java.util.Random;
+
 /**
  * Created by zejian
  * Time 2016/9/29.
@@ -58,6 +60,12 @@ public class SimpleService extends Service {
         System.out.println("onStartCommand invoke");
         if (Utils.isFit()) {
             Utils.openDing(getBaseContext());
+//            Random random = new Random();
+//            int i = random.nextInt(10);
+//            if (i > 5) {
+//            } else {
+//                Utils.openWeixin(getBaseContext());
+//            }
         } else {
             Utils.openThis(getBaseContext());
         }

@@ -31,6 +31,18 @@ public class Utils {
         }
     }
 
+    public static void openWeixin(Context mContext) {
+        PackageManager packageManager = mContext.getPackageManager();
+//        String packageName = "com.alibaba.android.rimet";//要打开应用的包名,以钉钉为例
+        String packageName = "com.tencent.wework";//要打开应用的包名,以企业微信为例
+        Intent launchIntentForPackage = packageManager.getLaunchIntentForPackage(packageName);
+        if (launchIntentForPackage != null) {
+            mContext.startActivity(launchIntentForPackage);
+        } else {
+            UserUtils.showToast("手机未安装该应用");
+        }
+    }
+
     public static void openThis(Context mContext) {
         PackageManager packageManager = mContext.getPackageManager();
         String packageName = "com.example.jackie.mvptest";//要打开应用的包名,以钉钉为例
