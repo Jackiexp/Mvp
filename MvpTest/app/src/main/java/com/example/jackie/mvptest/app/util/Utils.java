@@ -79,26 +79,25 @@ public class Utils {
 
 
     public static boolean isFit() {
-        return true;
-//        Calendar cal = Calendar.getInstance();// 当前日期
-//        int week = cal.get(Calendar.DAY_OF_WEEK);
-//        int hour = cal.get(Calendar.HOUR_OF_DAY);// 获取小时
-//        int minute = cal.get(Calendar.MINUTE);// 获取分钟
-//        int minuteOfDay = hour * 60 + minute;// 从0:00分开是到目前为止的分钟数
-//        final int start = 8 * 60 + 55;// 起始时间 00:20的分钟数
-//        final int end = 9 * 60 + 30;// 结束时间 8:00的分钟数
-//        if (week == Calendar.SATURDAY || week == Calendar.SUNDAY) {
-//            System.out.println("周末 在外围外");
-//            return false;
-//        } else {
-//            if (minuteOfDay >= start && minuteOfDay <= end) {
-//                System.out.println("在外围内");
-//                return true;
-//            } else {
-//                System.out.println("在外围外");
-//                return false;
-//            }
-//        }
+        Calendar cal = Calendar.getInstance();// 当前日期
+        int week = cal.get(Calendar.DAY_OF_WEEK);
+        int hour = cal.get(Calendar.HOUR_OF_DAY);// 获取小时
+        int minute = cal.get(Calendar.MINUTE);// 获取分钟
+        int minuteOfDay = hour * 60 + minute;// 从0:00分开是到目前为止的分钟数
+        final int start = 8 * 60 + 55;// 起始时间 00:20的分钟数
+        final int end = 9 * 60 + 30;// 结束时间 8:00的分钟数
+        if (week == Calendar.SATURDAY || week == Calendar.SUNDAY) {
+            System.out.println("周末 在外围外");
+            return false;
+        } else {
+            if (minuteOfDay >= start && minuteOfDay <= end) {
+                System.out.println("在外围内");
+                return true;
+            } else {
+                System.out.println("在外围外");
+                return false;
+            }
+        }
     }
 
     public static void startServie(Context context) {
