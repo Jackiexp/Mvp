@@ -1,7 +1,6 @@
 package com.example.jackie.mvptest.component;
 
 import com.example.jackie.mvptest.activity.DaggerActivity;
-import com.example.jackie.mvptest.activity.MainActivity;
 import com.example.jackie.mvptest.app.annotation.ActivityScope;
 import com.example.jackie.mvptest.app.component.AppComponent;
 import com.example.jackie.mvptest.module.MainActivityModule;

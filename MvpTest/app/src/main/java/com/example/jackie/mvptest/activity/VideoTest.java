@@ -14,9 +14,9 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.example.jackie.mvptest.R;
 import com.example.jackie.mvptest.app.config.Constants;
-import com.example.jackie.mvptest.app.util.UserUtils;
 import com.example.jackie.mvptest.presenter.IRoomView;
 import com.example.jackie.mvptest.presenter.RoomHelper;
 import com.example.jackie.mvptest.presenter.VideoPresenter;
@@ -152,17 +152,17 @@ public class VideoTest extends Activity implements VideoView, IRoomView {
 
     @Override
     public void onLoginSDKSuccess() {
-        UserUtils.showToast("登录成功");
+        ToastUtils.showLong("登录成功");
     }
 
     @Override
     public void onLoginSDKFailed(String module, int errCode, String errMsg) {
-        UserUtils.showToast("登录失败");
+        ToastUtils.showLong("登录失败");
     }
 
     @Override
     public void onEnterRoom() {
-        UserUtils.showToast("加入成功 onEnterRoom");
+        ToastUtils.showLong("加入成功 onEnterRoom");
         Log.e("VideoTest", "onEnterRoom");
     }
 
@@ -199,7 +199,7 @@ public class VideoTest extends Activity implements VideoView, IRoomView {
         return ILiveRoomManager.getInstance().joinRoom(roomId, option, new ILiveCallBack() {
             @Override
             public void onSuccess(Object data) {
-                UserUtils.showToast("加入成功");
+                ToastUtils.showLong("加入成功");
                 Log.e("VideoTest", "onSuccess");
 //                onEnterRoom();
 //                avRootView.onEnterRoom();
@@ -262,11 +262,11 @@ public class VideoTest extends Activity implements VideoView, IRoomView {
                         }
                     }
                     if (!"".equals(needPermission)) {
-                        UserUtils.showToast("需要权限:");
+                        ToastUtils.showLong("需要权限:");
                     }
 
                 } else {
-                    UserUtils.showToast("没有获取权限");
+                    ToastUtils.showLong("没有获取权限");
                 }
                 break;
         }

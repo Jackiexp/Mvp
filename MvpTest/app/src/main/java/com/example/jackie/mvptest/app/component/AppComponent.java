@@ -1,7 +1,6 @@
 package com.example.jackie.mvptest.app.component;
 
 import android.content.Context;
-import android.widget.Toast;
 
 import com.example.jackie.mvptest.app.module.AppModule;
 import com.example.jackie.mvptest.app.net.RetrofitService;
@@ -24,5 +23,5 @@ public interface AppComponent {
      */
     RetrofitService getRetrofitService();
 
-    Toast getToast();
+//    Toast getToast();
 }

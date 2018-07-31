@@ -8,15 +8,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.example.jackie.mvptest.R;
 import com.example.jackie.mvptest.app.AppBaseApplication;
-import com.example.jackie.mvptest.app.util.UserUtils;
+import com.example.jackie.mvptest.app.util.Utils;
 import com.example.jackie.mvptest.app.webview.WebActivity;
 import com.example.jackie.mvptest.entity.MessageEvent;
 import com.example.jackie.mvptest.presenter.LoginPresenter;
 import com.example.jackie.mvptest.presenter.LoginPresenterCompl;
 import com.example.jackie.mvptest.receiver.MyReceiver;
-import com.example.jackie.mvptest.app.util.Utils;
 import com.example.jackie.mvptest.views.LoginView;
 
 import org.greenrobot.eventbus.EventBus;
@@ -99,7 +99,7 @@ public class MainActivity extends Activity implements LoginView {
     @Override
     public void onLoginResult(String message) {
         textTip.setText(message);
-        UserUtils.showToast(message);
+        ToastUtils.showLong(message);
     }
 
     @Subscribe(threadMode = ThreadMode.POSTING, priority = 1)

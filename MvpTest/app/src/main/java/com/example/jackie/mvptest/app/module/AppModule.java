@@ -1,9 +1,7 @@
 package com.example.jackie.mvptest.app.module;
 
 import android.content.Context;
-import android.widget.Toast;
 
-import com.example.jackie.mvptest.app.util.UserUtils;
 import com.example.jackie.mvptest.app.net.RetrofitHelperDagger;
 import com.example.jackie.mvptest.app.net.RetrofitService;
 
@@ -37,11 +35,11 @@ public class AppModule {
         return RetrofitHelperDagger.getRetrofitService();
     }
 
-    @Provides
-    @Singleton
-    Toast provideToast(Context context) {
-        UserUtils.initToast(context);
-        return UserUtils.getToast();
-    }
+//    @Provides
+//    @Singleton
+//    Toast provideToast(Context context) {
+//        UserUtils.initToast(context);
+//        return UserUtils.getToast();
+//    }
 
 }

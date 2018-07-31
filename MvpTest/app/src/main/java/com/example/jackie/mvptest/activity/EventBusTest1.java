@@ -8,8 +8,8 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.example.jackie.mvptest.R;
-import com.example.jackie.mvptest.app.util.UserUtils;
 import com.example.jackie.mvptest.entity.MessageEvent;
 import com.example.jackie.mvptest.presenter.LoginPresenter;
 import com.example.jackie.mvptest.views.LoginView;
@@ -65,7 +65,7 @@ public class EventBusTest1 extends Activity implements LoginView {
     @Override
     public void onLoginResult(String message) {
         textTip.setText(message);
-        UserUtils.showToast(message);
+        ToastUtils.showLong(message);
     }
 
     @Subscribe(threadMode = ThreadMode.POSTING, priority = 5)

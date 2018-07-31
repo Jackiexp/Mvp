@@ -5,10 +5,11 @@ import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Build;
 import android.widget.TimePicker;
 
+import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.example.jackie.mvptest.service.SimpleService;
 
 import java.util.Calendar;
@@ -19,40 +20,27 @@ import java.util.Calendar;
 
 public class Utils {
 
-    public static void openDing(Context mContext) {
-        PackageManager packageManager = mContext.getPackageManager();
+    public static void openDing() {
         String packageName = "com.alibaba.android.rimet";//要打开应用的包名,以钉钉为例
-//        String packageName = "com.tencent.mm";//要打开应用的包名,以微信为例
-        Intent launchIntentForPackage = packageManager.getLaunchIntentForPackage(packageName);
-        if (launchIntentForPackage != null) {
-            mContext.startActivity(launchIntentForPackage);
+        if (AppUtils.isAppInstalled(packageName)) {
+            AppUtils.launchApp(packageName);
         } else {
-            UserUtils.showToast("手机未安装该应用");
+            ToastUtils.showLong("手机未安装该应用");
         }
     }
 
-    public static void openWeixin(Context mContext) {
-        PackageManager packageManager = mContext.getPackageManager();
-//        String packageName = "com.alibaba.android.rimet";//要打开应用的包名,以钉钉为例
+    public static void openWeixin() {
         String packageName = "com.tencent.wework";//要打开应用的包名,以企业微信为例
-        Intent launchIntentForPackage = packageManager.getLaunchIntentForPackage(packageName);
-        if (launchIntentForPackage != null) {
-            mContext.startActivity(launchIntentForPackage);
+        if (AppUtils.isAppInstalled(packageName)) {
+            AppUtils.launchApp(packageName);
         } else {
-            UserUtils.showToast("手机未安装该应用");
+            ToastUtils.showLong("手机未安装该应用");
         }
     }
 
-    public static void openThis(Context mContext) {
-        PackageManager packageManager = mContext.getPackageManager();
-        String packageName = "com.example.jackie.mvptest";//要打开应用的包名,以钉钉为例
-//        String packageName = "com.tencent.mm";//要打开应用的包名,以微信为例
-        Intent launchIntentForPackage = packageManager.getLaunchIntentForPackage(packageName);
-        if (launchIntentForPackage != null) {
-            mContext.startActivity(launchIntentForPackage);
-        } else {
-            UserUtils.showToast("手机未安装该应用");
-        }
+    public static void openThis() {
+        String packageName = "com.example.jackie.mvptest";
+        AppUtils.launchApp(packageName);
     }
 
     //设置闹钟(周期)
@@ -91,25 +79,26 @@ public class Utils {
 
 
     public static boolean isFit() {
-        Calendar cal = Calendar.getInstance();// 当前日期
-        int week = cal.get(Calendar.DAY_OF_WEEK);
-        int hour = cal.get(Calendar.HOUR_OF_DAY);// 获取小时
-        int minute = cal.get(Calendar.MINUTE);// 获取分钟
-        int minuteOfDay = hour * 60 + minute;// 从0:00分开是到目前为止的分钟数
-        final int start = 8 * 60 + 55;// 起始时间 00:20的分钟数
-        final int end = 9 * 60 + 30;// 结束时间 8:00的分钟数
-        if (week == Calendar.SATURDAY || week == Calendar.SUNDAY) {
-            System.out.println("周末 在外围外");
-            return false;
-        } else {
-            if (minuteOfDay >= start && minuteOfDay <= end) {
-                System.out.println("在外围内");
-                return true;
-            } else {
-                System.out.println("在外围外");
-                return false;
-            }
-        }
+        return true;
+//        Calendar cal = Calendar.getInstance();// 当前日期
+//        int week = cal.get(Calendar.DAY_OF_WEEK);
+//        int hour = cal.get(Calendar.HOUR_OF_DAY);// 获取小时
+//        int minute = cal.get(Calendar.MINUTE);// 获取分钟
+//        int minuteOfDay = hour * 60 + minute;// 从0:00分开是到目前为止的分钟数
+//        final int start = 8 * 60 + 55;// 起始时间 00:20的分钟数
+//        final int end = 9 * 60 + 30;// 结束时间 8:00的分钟数
+//        if (week == Calendar.SATURDAY || week == Calendar.SUNDAY) {
+//            System.out.println("周末 在外围外");
+//            return false;
+//        } else {
+//            if (minuteOfDay >= start && minuteOfDay <= end) {
+//                System.out.println("在外围内");
+//                return true;
+//            } else {
+//                System.out.println("在外围外");
+//                return false;
+//            }
+//        }
     }
 
     public static void startServie(Context context) {

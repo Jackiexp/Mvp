@@ -59,15 +59,15 @@ public class SimpleService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         System.out.println("onStartCommand invoke");
         if (Utils.isFit()) {
-            Utils.openDing(getBaseContext());
+            Utils.openDing();
 //            Random random = new Random();
 //            int i = random.nextInt(10);
 //            if (i > 5) {
 //            } else {
-//                Utils.openWeixin(getBaseContext());
+//                Utils.openWeixin();
 //            }
         } else {
-            Utils.openThis(getBaseContext());
+            Utils.openThis();
         }
 
         AlarmManager manager = (AlarmManager) getSystemService(ALARM_SERVICE);

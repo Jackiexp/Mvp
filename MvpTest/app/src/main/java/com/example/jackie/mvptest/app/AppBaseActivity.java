@@ -18,8 +18,8 @@ public abstract class AppBaseActivity<T extends AppPresenter> extends AppCompatA
 
     @Inject
     protected T mPresenter;
-    @Inject
-    Toast mToast;
+//    @Inject
+//    Toast mToast;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.EditText;
 
+import com.blankj.utilcode.util.KeyboardUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.example.jackie.mvptest.R;
 import com.example.jackie.mvptest.app.AppBaseActivity;
-import com.example.jackie.mvptest.app.util.UserUtils;
 import com.example.jackie.mvptest.component.DaggerMainActivityComponent;
 import com.example.jackie.mvptest.module.MainActivityModule;
 import com.example.jackie.mvptest.presenter.DaggerPresenter;
@@ -38,7 +39,7 @@ public class DaggerActivity extends AppBaseActivity<DaggerPresenter> implements 
 
     @OnClick(R.id.bt_commit)
     public void btCommit() {
-        UserUtils.closeKeyboard(this);
+        KeyboardUtils.hideSoftInput(this);
         mPresenter.login(editUsername.getText().toString(), editPassword.getText().toString());
     }
 
@@ -53,7 +54,7 @@ public class DaggerActivity extends AppBaseActivity<DaggerPresenter> implements 
 
     @Override
     public void onLoginResult(String message) {
-        UserUtils.showToast(message);
+        ToastUtils.showLong(message);
     }
 
     public static void start(Context context) {
