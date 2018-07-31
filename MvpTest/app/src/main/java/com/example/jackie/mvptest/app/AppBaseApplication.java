@@ -2,6 +2,7 @@ package com.example.jackie.mvptest.app;
 
 import android.app.Application;
 
+import com.blankj.utilcode.util.Utils;
 import com.example.jackie.mvptest.app.component.AppComponent;
 import com.example.jackie.mvptest.app.component.DaggerAppComponent;
 import com.example.jackie.mvptest.app.module.AppModule;
@@ -28,6 +29,7 @@ public class AppBaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
+        Utils.init(this);
         if (appComponent == null) {
             appComponent = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
         }
